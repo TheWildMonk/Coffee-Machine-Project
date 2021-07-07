@@ -27,8 +27,8 @@ while not close_machine:
 
         # TODO: 2a. If there's not enough resource, let user know and ask the user again.
         #  Else, ask the user for coins.
-        # and MILK < MENU[user_choice]["ingredients"]["milk"] and COFFEE < MENU[user_choice]["ingredients"]["coffee"]
-        if water < MENU[user_choice]["ingredients"]["water"]:
+        if water < MENU[user_choice]["ingredients"]["water"] and milk < MENU[user_choice]["ingredients"]["milk"] and \
+                coffee < MENU[user_choice]["ingredients"]["coffee"]:
             print(f"Sorry. there is not enough water 💧 for {user_choice}.")
         else:
             quarters = int(input("How many quarters?: ")) * 0.25
@@ -48,7 +48,7 @@ while not close_machine:
                     print(f"Here is ${round(change, 2)} in change.")
                 print(f"Here is your {user_choice} ☕, enjoy")
 
-                # TODO: 3. Deduct the resources used from original resources.
+                # TODO: 2c. Deduct the resources used from original resources.
                 if user_choice != "espresso":
                     water -= MENU[user_choice]["ingredients"]["water"]
                     milk -= MENU[user_choice]["ingredients"]["milk"]
